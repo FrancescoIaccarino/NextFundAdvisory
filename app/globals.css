@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 206 97% 15%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 206 97% 15%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 13%;
+    --input: 0 0% 13%;
+    --ring: 206 97% 15%;
+    --chart-1: 206 70% 45%;
+    --chart-2: 32 95% 50%;
+    --chart-3: 206 50% 65%;
+    --chart-4: 186 70% 45%;
+    --chart-5: 32 70% 60%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-dark-bg-primary text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-white via-gray-200 to-nextfund-blue bg-clip-text text-transparent;
+  }
+
+  /* Glow Effects */
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(1, 42, 74, 0.5);
+  }
+
+  .glow-blue-hover:hover {
+    box-shadow: 0 0 30px rgba(1, 42, 74, 0.7);
+  }
+
+  /* Grid Pattern */
+  .grid-pattern {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Card Lift Effect */
+  .card-lift {
+    @apply transition-transform duration-300;
+  }
+
+  .card-lift:hover {
+    @apply -translate-y-2;
+  }
+}
